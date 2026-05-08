@@ -1,0 +1,29 @@
+aid: clearml
+url: https://raw.githubusercontent.com/api-evangelist/clearml/refs/heads/main/apis.yml
+name: ClearML
+x-type: company
+description: >-
+  ClearML is an open-source MLOps platform offering experiment tracking, ML pipelines, dataset management, model serving, and orchestration.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - ML
+  - MLOps
+  - Open Source
+  - Experiment Tracking
+  - Model Serving
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://clear.ml/
+  - type: Plans
+    url: plans/clearml-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/clearml-rate-limits.yml
+  - type: FinOps
+    url: finops/clearml-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
