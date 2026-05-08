@@ -3,21 +3,52 @@ url: https://raw.githubusercontent.com/api-evangelist/clearml/refs/heads/main/ap
 name: ClearML
 x-type: company
 description: >-
-  ClearML is an open-source MLOps platform offering experiment tracking, ML pipelines, dataset management, model serving, and orchestration.
+  ClearML is an open-source MLOps platform with experiment tracking, datasets, model
+  serving, and orchestration. The ClearML Server exposes a versioned REST API split
+  across services (auth, projects, tasks, workers, models, queues, events, pipelines).
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - ML
   - MLOps
   - Open Source
   - Experiment Tracking
-  - Model Serving
+  - Orchestration
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: clearml:clearml-rest-api
+    name: ClearML REST API
+    humanURL: https://clear.ml/docs/latest/docs/references/api/index/
+    baseURL: https://api.clear.ml
+    tags:
+      - REST
+      - Experiments
+      - Tasks
+      - Models
+      - Pipelines
+    description: >-
+      The ClearML REST API is organized into services: auth (login/credentials),
+      projects, tasks (experiments), workers, models, queues, events, pipelines, and
+      reports. Authentication uses access/secret-key pairs minted in the UI; SDK clients
+      handle token exchange against the auth.login endpoint.
+    properties:
+      - type: Documentation
+        url: https://clear.ml/docs/latest/docs/references/api/index/
+      - type: Authentication
+        url: https://clear.ml/docs/latest/docs/references/api/login
+      - type: SDK
+        title: Python (clearml)
+        url: https://clear.ml/docs/latest/docs/clearml_sdk/clearml_sdk
 common:
   - type: Website
     url: https://clear.ml/
+  - type: Portal
+    url: https://clear.ml/docs/latest/docs/
+  - type: SourceCode
+    url: https://github.com/clearml/clearml-server
+  - type: Pricing
+    url: https://clear.ml/pricing
   - type: Plans
     url: plans/clearml-plans-pricing.yml
   - type: RateLimits
