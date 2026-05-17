@@ -1,7 +1,7 @@
 aid: clearml
 url: https://raw.githubusercontent.com/api-evangelist/clearml/refs/heads/main/apis.yml
 name: ClearML
-x-type: company
+kind: company
 description: >-
   ClearML is an open-source MLOps platform with experiment tracking, datasets, model
   serving, and orchestration. The ClearML Server exposes a versioned REST API split
