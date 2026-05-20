@@ -41,6 +41,8 @@ apis:
         title: Python (clearml)
         url: https://clear.ml/docs/latest/docs/clearml_sdk/clearml_sdk
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/clearml
   - type: Website
     url: https://clear.ml/
   - type: Portal
