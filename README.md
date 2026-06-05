@@ -2,37 +2,59 @@
 
 ClearML is an open-source MLOps platform with experiment tracking, datasets, model serving, and orchestration. The ClearML Server exposes a versioned REST API split across services (auth, projects, tasks, workers, models, queues, events, pipelines).
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/clearml/refs/heads/main/apis.yml)
-
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=clearml-api-evangelist&utm_content=repo)
-
-## Type
-- **x-type:** company
-
-## APIs
-- **ClearML REST API** - Service-oriented REST at `https://api.clear.ml`. Services: auth, projects, tasks (experiments), workers, models, queues, events, pipelines, reports. Access/secret-key pairs minted in UI.
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/clearml/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/clearml/refs/heads/main/apis.yml)
 
 ## Tags
-- ML, MLOps, Open Source, Experiment Tracking, Orchestration
+
+- ML
+- MLOps
+- Open Source
+- Experiment Tracking
+- Orchestration
 
 ## Timestamps
+
 - **Created:** 2026-05-08
 - **Modified:** 2026-05-08
 
+## APIs
+
+### ClearML REST API
+
+The ClearML REST API is organized into services: auth (login/credentials), projects, tasks (experiments), workers, models, queues, events, pipelines, and reports. Authentication uses access/secret-key pairs minted in the UI; SDK clients handle token exchange against the auth.login endpoint.
+
+- **Human URL:** [https://clear.ml/docs/latest/docs/references/api/index/](https://clear.ml/docs/latest/docs/references/api/index/)
+- **Base URL:** `https://api.clear.ml`
+
+#### Tags
+
+- REST
+- Experiments
+- Tasks
+- Models
+- Pipelines
+
+#### Properties
+
+- [Documentation](https://clear.ml/docs/latest/docs/references/api/index/)
+- [Authentication](https://clear.ml/docs/latest/docs/references/api/login)
+- [SDK](https://clear.ml/docs/latest/docs/clearml_sdk/clearml_sdk)
+- [Postman Collection](collections/clearml.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/clearml.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
 ## Common Properties
+
+- [LinkedIn](https://www.linkedin.com/company/clearml)
 - [Website](https://clear.ml/)
-- [Documentation](https://clear.ml/docs/latest/docs/)
-- [Source (Apache 2.0)](https://github.com/clearml/clearml-server)
+- [Portal](https://clear.ml/docs/latest/docs/)
+- [Source Code](https://github.com/clearml/clearml-server)
 - [Pricing](https://clear.ml/pricing)
 - [Plans](plans/clearml-plans-pricing.yml)
-- [RateLimits](rate-limits/clearml-rate-limits.yml)
-- [FinOps](finops/clearml-finops.yml)
-
-## Notes
-- Pricing reconciled (research): Community free (3 users, 100 GB artifacts, 1M API calls/mo); Pro $15/user/mo + usage ($0.1/GB storage, $0.01/1MB metrics, $1/100K API calls); Scale & Enterprise custom (VPC, on-prem, air-gap). Self-hosted open source available.
-- ClearML actually publishes per-month API call quotas — unusually transparent for an MLOps platform.
+- [Rate Limits](rate-limits/clearml-rate-limits.yml)
+- [Fin Ops](finops/clearml-finops.yml)
+- [L L Ms Txt](https://clear.ml/llms.txt)
 
 ## Maintainers
-**FN:** Kin Lane
 
+**FN:** Kin Lane
 **Email:** kin@apievangelist.com
