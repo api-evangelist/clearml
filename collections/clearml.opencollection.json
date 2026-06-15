@@ -1,0 +1,575 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClearML REST API",
+    "version": "2.30"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Login and obtain a bearer token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/auth.login",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Authenticate using ClearML access_key / secret_key (HTTP Basic) and\nreceive a short-lived bearer token used for subsequent calls.\n"
+        },
+        {
+          "info": {
+            "name": "Logout (invalidate token)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/auth.logout"
+          },
+          "docs": "Logout (invalidate token)"
+        },
+        {
+          "info": {
+            "name": "Create API credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/auth.create_credentials"
+          },
+          "docs": "Create API credentials"
+        },
+        {
+          "info": {
+            "name": "List API credentials for the current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/auth.get_credentials"
+          },
+          "docs": "List API credentials for the current user"
+        },
+        {
+          "info": {
+            "name": "Revoke API credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/auth.revoke_credentials",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Revoke API credentials"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Debug",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Health check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/debug.ping"
+          },
+          "docs": "Health check"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a task"
+        },
+        {
+          "info": {
+            "name": "Get a task by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.get_by_id",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get a task by id"
+        },
+        {
+          "info": {
+            "name": "Query tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.get_all",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Query tasks"
+        },
+        {
+          "info": {
+            "name": "Edit a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.edit",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Edit a task"
+        },
+        {
+          "info": {
+            "name": "Clone a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.clone",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Clone a task"
+        },
+        {
+          "info": {
+            "name": "Delete a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete a task"
+        },
+        {
+          "info": {
+            "name": "Enqueue a task for execution",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.enqueue",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enqueue a task for execution"
+        },
+        {
+          "info": {
+            "name": "Dequeue a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.dequeue",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Dequeue a task"
+        },
+        {
+          "info": {
+            "name": "Mark a task as started (in_progress)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.started",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark a task as started (in_progress)"
+        },
+        {
+          "info": {
+            "name": "Signal a task has stopped",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.stopped",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Signal a task has stopped"
+        },
+        {
+          "info": {
+            "name": "Mark a task as completed",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.completed",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark a task as completed"
+        },
+        {
+          "info": {
+            "name": "Mark a task as failed",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.failed",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark a task as failed"
+        },
+        {
+          "info": {
+            "name": "Reset a task to its initial state",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.reset",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Reset a task to its initial state"
+        },
+        {
+          "info": {
+            "name": "Publish a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.publish",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publish a task"
+        },
+        {
+          "info": {
+            "name": "Add or update artifacts on a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.add_or_update_artifacts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add or update artifacts on a task"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/events.add",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add an event"
+        },
+        {
+          "info": {
+            "name": "Add a batch of events",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/events.add_batch",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a batch of events"
+        },
+        {
+          "info": {
+            "name": "Get metrics for a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/events.get_task_metrics",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get metrics for a task"
+        },
+        {
+          "info": {
+            "name": "Get scalar metric data for a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/events.get_scalar_metric_data",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get scalar metric data for a task"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/models.create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a model"
+        },
+        {
+          "info": {
+            "name": "Query models",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/models.get_all",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Query models"
+        },
+        {
+          "info": {
+            "name": "Get a model by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/models.get_by_id",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get a model by id"
+        },
+        {
+          "info": {
+            "name": "Delete a model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/models.delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete a model"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/projects.create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a project"
+        },
+        {
+          "info": {
+            "name": "Query projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/projects.get_all",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Query projects"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Queues",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a queue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/queues.create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a queue"
+        },
+        {
+          "info": {
+            "name": "Query queues",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/queues.get_all",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Query queues"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Workers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List workers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/workers.get_all",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "List workers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
