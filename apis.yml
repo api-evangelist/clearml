@@ -6,7 +6,7 @@ description: >-
   ClearML is an open-source MLOps platform with experiment tracking, datasets, model
   serving, and orchestration. The ClearML Server exposes a versioned REST API split
   across services (auth, projects, tasks, workers, models, queues, events, pipelines).
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - ML
   - MLOps
