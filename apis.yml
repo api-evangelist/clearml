@@ -37,7 +37,7 @@ apis:
         url: https://clear.ml/docs/latest/docs/references/api/index/
       - type: Authentication
         url: https://clear.ml/docs/latest/docs/references/api/login
-      - type: SDK
+      - type: SDKs
         title: Python (clearml)
         url: https://clear.ml/docs/latest/docs/clearml_sdk/clearml_sdk
 common:
@@ -57,7 +57,7 @@ common:
     url: rate-limits/clearml-rate-limits.yml
   - type: FinOps
     url: finops/clearml-finops.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://clear.ml/llms.txt
 maintainers:
   - FN: Kin Lane
