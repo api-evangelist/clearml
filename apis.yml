@@ -41,6 +41,12 @@ apis:
         title: Python (clearml)
         url: https://clear.ml/docs/latest/docs/clearml_sdk/clearml_sdk
 common:
+  - type: VulnerabilityDisclosure
+    url: security/clearml-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/clearml-domain-security.yml
+  - type: Authentication
+    url: authentication/clearml-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/clearml
   - type: Website
@@ -59,6 +65,8 @@ common:
     url: finops/clearml-finops.yml
   - type: LlmsText
     url: https://clear.ml/llms.txt
+  - url: https://clear.ml/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

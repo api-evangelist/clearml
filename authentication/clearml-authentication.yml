@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/clearml-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  description: Bearer token obtained from /auth.login
+  sources:
+  - openapi/clearml-openapi.yml
+- name: BasicAuth
+  type: http
+  scheme: basic
+  description: HTTP Basic with access_key / secret_key for /auth.login
+  sources:
+  - openapi/clearml-openapi.yml
