@@ -41,6 +41,8 @@ apis:
         title: Python (clearml)
         url: https://clear.ml/docs/latest/docs/clearml_sdk/clearml_sdk
 common:
+  - type: AgenticAccess
+    url: agentic-access/clearml-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/clearml-vulnerability-disclosure.yml
   - type: DomainSecurity
