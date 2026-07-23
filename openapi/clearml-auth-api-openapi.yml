@@ -1,0 +1,113 @@
+openapi: 3.1.0
+info:
+  title: ClearML REST Auth API
+  description: 'ClearML MLOps platform REST API. The server exposes a JSON-RPC-style REST
+
+    surface where every operation is a POST against /<service>.<action> under
+
+    /api/v2.<version>. Authenticate by calling /auth.login with API credentials
+
+    to obtain a Bearer token, then send it in the Authorization header for all
+
+    subsequent calls.
+
+    '
+  version: '2.30'
+  contact:
+    name: ClearML Documentation
+    url: https://clear.ml/docs/latest/docs/references/api/index/
+servers:
+- url: https://api.clear.ml
+  description: ClearML SaaS API
+- url: https://{host}/api/v2.30
+  description: Self-hosted ClearML Server
+  variables:
+    host:
+      default: clearml.example.com
+      description: ClearML server host
+security:
+- BearerAuth: []
+tags:
+- name: Auth
+paths:
+  /auth.login:
+    post:
+      summary: Login and obtain a bearer token
+      description: 'Authenticate using ClearML access_key / secret_key (HTTP Basic) and
+
+        receive a short-lived bearer token used for subsequent calls.
+
+        '
+      operationId: authLogin
+      tags:
+      - Auth
+      security:
+      - BasicAuth: []
+      responses:
+        '200':
+          description: Token issued
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+  /auth.logout:
+    post:
+      summary: Logout (invalidate token)
+      operationId: authLogout
+      tags:
+      - Auth
+      responses:
+        '200':
+          description: Logged out
+  /auth.create_credentials:
+    post:
+      summary: Create API credentials
+      operationId: authCreateCredentials
+      tags:
+      - Auth
+      responses:
+        '200':
+          description: Credentials created
+  /auth.get_credentials:
+    post:
+      summary: List API credentials for the current user
+      operationId: authGetCredentials
+      tags:
+      - Auth
+      responses:
+        '200':
+          description: Credentials list
+  /auth.revoke_credentials:
+    post:
+      summary: Revoke API credentials
+      operationId: authRevokeCredentials
+      tags:
+      - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                access_key:
+                  type: string
+      responses:
+        '200':
+          description: Revoked
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from /auth.login
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic with access_key / secret_key for /auth.login

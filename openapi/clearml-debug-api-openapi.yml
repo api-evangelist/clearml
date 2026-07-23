@@ -1,0 +1,51 @@
+openapi: 3.1.0
+info:
+  title: ClearML REST Auth Debug API
+  description: 'ClearML MLOps platform REST API. The server exposes a JSON-RPC-style REST
+
+    surface where every operation is a POST against /<service>.<action> under
+
+    /api/v2.<version>. Authenticate by calling /auth.login with API credentials
+
+    to obtain a Bearer token, then send it in the Authorization header for all
+
+    subsequent calls.
+
+    '
+  version: '2.30'
+  contact:
+    name: ClearML Documentation
+    url: https://clear.ml/docs/latest/docs/references/api/index/
+servers:
+- url: https://api.clear.ml
+  description: ClearML SaaS API
+- url: https://{host}/api/v2.30
+  description: Self-hosted ClearML Server
+  variables:
+    host:
+      default: clearml.example.com
+      description: ClearML server host
+security:
+- BearerAuth: []
+tags:
+- name: Debug
+paths:
+  /debug.ping:
+    post:
+      summary: Health check
+      operationId: debugPing
+      tags:
+      - Debug
+      responses:
+        '200':
+          description: pong
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from /auth.login
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic with access_key / secret_key for /auth.login
