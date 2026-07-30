@@ -6,7 +6,20 @@ description: >-
   ClearML is an open-source MLOps platform with experiment tracking, datasets, model
   serving, and orchestration. The ClearML Server exposes a versioned REST API split
   across services (auth, projects, tasks, workers, models, queues, events, pipelines).
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/clearml.png
 tags:
   - ML
   - MLOps
@@ -17,29 +30,108 @@ created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-  - aid: clearml:clearml-rest-api
-    name: ClearML REST API
-    humanURL: https://clear.ml/docs/latest/docs/references/api/index/
-    baseURL: https://api.clear.ml
-    tags:
-      - REST
-      - Experiments
-      - Tasks
-      - Models
-      - Pipelines
-    description: >-
-      The ClearML REST API is organized into services: auth (login/credentials),
-      projects, tasks (experiments), workers, models, queues, events, pipelines, and
-      reports. Authentication uses access/secret-key pairs minted in the UI; SDK clients
-      handle token exchange against the auth.login endpoint.
-    properties:
-      - type: Documentation
-        url: https://clear.ml/docs/latest/docs/references/api/index/
-      - type: Authentication
-        url: https://clear.ml/docs/latest/docs/references/api/login
-      - type: SDKs
-        title: Python (clearml)
-        url: https://clear.ml/docs/latest/docs/clearml_sdk/clearml_sdk
+- aid: clearml:clearml-rest-api
+  name: ClearML REST API
+  humanURL: https://clear.ml/docs/latest/docs/references/api/index/
+  baseURL: https://api.clear.ml
+  tags:
+  - REST
+  - Experiments
+  - Tasks
+  - Models
+  - Pipelines
+  description: >-
+    The ClearML REST API is organized into services: auth (login/credentials), projects, tasks (experiments),
+    workers, models, queues, events, pipelines, and reports. Authentication uses access/secret-key pairs
+    minted in the UI; SDK clients handle token exchange against the auth.login endpoint.
+  properties:
+  - type: Documentation
+    url: https://clear.ml/docs/latest/docs/references/api/index/
+  - type: Authentication
+    url: https://clear.ml/docs/latest/docs/references/api/login
+  - type: SDKs
+    title: Python (clearml)
+    url: https://clear.ml/docs/latest/docs/clearml_sdk/clearml_sdk
+- aid: clearml:clearml-auth-api
+  name: ClearML Auth API
+  description: The Auth API from ClearML — 5 operation(s) for auth.
+  humanURL: https://clear.ml/docs/latest/docs/references/api/index/
+  baseURL: https://api.clear.ml
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/clearml-auth-api-openapi.yml
+- aid: clearml:clearml-debug-api
+  name: ClearML Debug API
+  description: The Debug API from ClearML — 1 operation(s) for debug.
+  humanURL: https://clear.ml/docs/latest/docs/references/api/index/
+  baseURL: https://api.clear.ml
+  tags:
+  - Debug
+  properties:
+  - type: OpenAPI
+    url: openapi/clearml-debug-api-openapi.yml
+- aid: clearml:clearml-events-api
+  name: ClearML Events API
+  description: The Events API from ClearML — 4 operation(s) for events.
+  humanURL: https://clear.ml/docs/latest/docs/references/api/index/
+  baseURL: https://api.clear.ml
+  tags:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/clearml-events-api-openapi.yml
+- aid: clearml:clearml-models-api
+  name: ClearML Models API
+  description: The Models API from ClearML — 4 operation(s) for models.
+  humanURL: https://clear.ml/docs/latest/docs/references/api/index/
+  baseURL: https://api.clear.ml
+  tags:
+  - Models
+  properties:
+  - type: OpenAPI
+    url: openapi/clearml-models-api-openapi.yml
+- aid: clearml:clearml-projects-api
+  name: ClearML Projects API
+  description: The Projects API from ClearML — 2 operation(s) for projects.
+  humanURL: https://clear.ml/docs/latest/docs/references/api/index/
+  baseURL: https://api.clear.ml
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/clearml-projects-api-openapi.yml
+- aid: clearml:clearml-queues-api
+  name: ClearML Queues API
+  description: The Queues API from ClearML — 2 operation(s) for queues.
+  humanURL: https://clear.ml/docs/latest/docs/references/api/index/
+  baseURL: https://api.clear.ml
+  tags:
+  - Queues
+  properties:
+  - type: OpenAPI
+    url: openapi/clearml-queues-api-openapi.yml
+- aid: clearml:clearml-tasks-api
+  name: ClearML Tasks API
+  description: The Tasks API from ClearML — 15 operation(s) for tasks.
+  humanURL: https://clear.ml/docs/latest/docs/references/api/index/
+  baseURL: https://api.clear.ml
+  tags:
+  - Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/clearml-tasks-api-openapi.yml
+- aid: clearml:clearml-workers-api
+  name: ClearML Workers API
+  description: The Workers API from ClearML — 1 operation(s) for workers.
+  humanURL: https://clear.ml/docs/latest/docs/references/api/index/
+  baseURL: https://api.clear.ml
+  tags:
+  - Workers
+  properties:
+  - type: OpenAPI
+    url: openapi/clearml-workers-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/clearml-agentic-access.yml
