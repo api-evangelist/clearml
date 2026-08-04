@@ -1,0 +1,28 @@
+{
+  "provider": "clearml",
+  "sources": [
+    "clearml-auth-api-openapi.yml",
+    "clearml-debug-api-openapi.yml",
+    "clearml-events-api-openapi.yml",
+    "clearml-models-api-openapi.yml",
+    "clearml-projects-api-openapi.yml",
+    "clearml-queues-api-openapi.yml",
+    "clearml-tasks-api-openapi.yml",
+    "clearml-workers-api-openapi.yml"
+  ],
+  "outputs": [
+    "clearml-auth-api-openapi.yml",
+    "clearml-debug-api-openapi.yml",
+    "clearml-events-api-openapi.yml",
+    "clearml-models-api-openapi.yml",
+    "clearml-projects-api-openapi.yml",
+    "clearml-queues-api-openapi.yml",
+    "clearml-tasks-api-openapi.yml",
+    "clearml-workers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

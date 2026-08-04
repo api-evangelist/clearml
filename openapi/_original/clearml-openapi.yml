@@ -1,0 +1,532 @@
+openapi: 3.1.0
+info:
+  title: ClearML REST API
+  description: |
+    ClearML MLOps platform REST API. The server exposes a JSON-RPC-style REST
+    surface where every operation is a POST against /<service>.<action> under
+    /api/v2.<version>. Authenticate by calling /auth.login with API credentials
+    to obtain a Bearer token, then send it in the Authorization header for all
+    subsequent calls.
+  version: "2.30"
+  contact:
+    name: ClearML Documentation
+    url: https://clear.ml/docs/latest/docs/references/api/index/
+servers:
+  - url: https://api.clear.ml
+    description: ClearML SaaS API
+  - url: https://{host}/api/v2.30
+    description: Self-hosted ClearML Server
+    variables:
+      host:
+        default: clearml.example.com
+        description: ClearML server host
+security:
+  - BearerAuth: []
+paths:
+  /auth.login:
+    post:
+      summary: Login and obtain a bearer token
+      description: |
+        Authenticate using ClearML access_key / secret_key (HTTP Basic) and
+        receive a short-lived bearer token used for subsequent calls.
+      operationId: authLogin
+      tags: [Auth]
+      security:
+        - BasicAuth: []
+      responses:
+        '200':
+          description: Token issued
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+  /auth.logout:
+    post:
+      summary: Logout (invalidate token)
+      operationId: authLogout
+      tags: [Auth]
+      responses:
+        '200':
+          description: Logged out
+  /auth.create_credentials:
+    post:
+      summary: Create API credentials
+      operationId: authCreateCredentials
+      tags: [Auth]
+      responses:
+        '200':
+          description: Credentials created
+  /auth.get_credentials:
+    post:
+      summary: List API credentials for the current user
+      operationId: authGetCredentials
+      tags: [Auth]
+      responses:
+        '200':
+          description: Credentials list
+  /auth.revoke_credentials:
+    post:
+      summary: Revoke API credentials
+      operationId: authRevokeCredentials
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                access_key:
+                  type: string
+      responses:
+        '200':
+          description: Revoked
+  /debug.ping:
+    post:
+      summary: Health check
+      operationId: debugPing
+      tags: [Debug]
+      responses:
+        '200':
+          description: pong
+  /tasks.create:
+    post:
+      summary: Create a task
+      operationId: tasksCreate
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, type]
+              properties:
+                name:
+                  type: string
+                type:
+                  type: string
+                project:
+                  type: string
+                comment:
+                  type: string
+                tags:
+                  type: array
+                  items:
+                    type: string
+                script:
+                  type: object
+                execution:
+                  type: object
+                hyperparams:
+                  type: object
+      responses:
+        '200':
+          description: Task created
+  /tasks.get_by_id:
+    post:
+      summary: Get a task by id
+      operationId: tasksGetById
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [task]
+              properties:
+                task:
+                  type: string
+      responses:
+        '200':
+          description: Task
+  /tasks.get_all:
+    post:
+      summary: Query tasks
+      operationId: tasksGetAll
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Tasks list
+  /tasks.edit:
+    post:
+      summary: Edit a task
+      operationId: tasksEdit
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Edited
+  /tasks.clone:
+    post:
+      summary: Clone a task
+      operationId: tasksClone
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Cloned
+  /tasks.delete:
+    post:
+      summary: Delete a task
+      operationId: tasksDelete
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Deleted
+  /tasks.enqueue:
+    post:
+      summary: Enqueue a task for execution
+      operationId: tasksEnqueue
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                task:
+                  type: string
+                queue:
+                  type: string
+      responses:
+        '200':
+          description: Enqueued
+  /tasks.dequeue:
+    post:
+      summary: Dequeue a task
+      operationId: tasksDequeue
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Dequeued
+  /tasks.started:
+    post:
+      summary: Mark a task as started (in_progress)
+      operationId: tasksStarted
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated
+  /tasks.stopped:
+    post:
+      summary: Signal a task has stopped
+      operationId: tasksStopped
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated
+  /tasks.completed:
+    post:
+      summary: Mark a task as completed
+      operationId: tasksCompleted
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated
+  /tasks.failed:
+    post:
+      summary: Mark a task as failed
+      operationId: tasksFailed
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated
+  /tasks.reset:
+    post:
+      summary: Reset a task to its initial state
+      operationId: tasksReset
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Reset
+  /tasks.publish:
+    post:
+      summary: Publish a task
+      operationId: tasksPublish
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Published
+  /tasks.add_or_update_artifacts:
+    post:
+      summary: Add or update artifacts on a task
+      operationId: tasksAddOrUpdateArtifacts
+      tags: [Tasks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated
+  /events.add:
+    post:
+      summary: Add an event
+      operationId: eventsAdd
+      tags: [Events]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Added
+  /events.add_batch:
+    post:
+      summary: Add a batch of events
+      operationId: eventsAddBatch
+      tags: [Events]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Added
+  /events.get_task_metrics:
+    post:
+      summary: Get metrics for a task
+      operationId: eventsGetTaskMetrics
+      tags: [Events]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Metrics
+  /events.get_scalar_metric_data:
+    post:
+      summary: Get scalar metric data for a task
+      operationId: eventsGetScalarMetricData
+      tags: [Events]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Metric data
+  /models.create:
+    post:
+      summary: Create a model
+      operationId: modelsCreate
+      tags: [Models]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Created
+  /models.get_all:
+    post:
+      summary: Query models
+      operationId: modelsGetAll
+      tags: [Models]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Models list
+  /models.get_by_id:
+    post:
+      summary: Get a model by id
+      operationId: modelsGetById
+      tags: [Models]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [model]
+              properties:
+                model:
+                  type: string
+      responses:
+        '200':
+          description: Model
+  /models.delete:
+    post:
+      summary: Delete a model
+      operationId: modelsDelete
+      tags: [Models]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Deleted
+  /projects.create:
+    post:
+      summary: Create a project
+      operationId: projectsCreate
+      tags: [Projects]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Created
+  /projects.get_all:
+    post:
+      summary: Query projects
+      operationId: projectsGetAll
+      tags: [Projects]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Projects list
+  /queues.create:
+    post:
+      summary: Create a queue
+      operationId: queuesCreate
+      tags: [Queues]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Created
+  /queues.get_all:
+    post:
+      summary: Query queues
+      operationId: queuesGetAll
+      tags: [Queues]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Queues list
+  /workers.get_all:
+    post:
+      summary: List workers
+      operationId: workersGetAll
+      tags: [Workers]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Workers
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from /auth.login
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic with access_key / secret_key for /auth.login
