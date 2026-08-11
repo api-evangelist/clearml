@@ -133,6 +133,10 @@ apis:
   - type: OpenAPI
     url: openapi/clearml-workers-api-openapi.yml
 common:
+  - type: IssueTracker
+    url: https://github.com/clearml/clearml-server/issues
+  - type: Releases
+    url: https://github.com/clearml/clearml-server/releases
   - type: AgenticAccess
     url: agentic-access/clearml-agentic-access.yml
   - type: VulnerabilityDisclosure
