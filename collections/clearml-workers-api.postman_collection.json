@@ -1,0 +1,129 @@
+{
+  "item": [
+    {
+      "id": "1ec44ab4-fecc-4da5-adbb-86a4b935f891",
+      "name": "Workers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e0de429b-48f8-43cf-92f2-77446ece9090",
+          "name": "List workers",
+          "request": {
+            "name": "List workers",
+            "description": {},
+            "url": {
+              "path": [
+                "workers.get_all"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6ecf226d-d7e2-4bcf-beff-f9b01ed57cb5",
+              "name": "Workers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workers.get_all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.clear.ml",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d50e33b1-0239-4691-b040-c8dacded933d",
+    "name": "ClearML REST Auth Workers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "ClearML MLOps platform REST API. The server exposes a JSON-RPC-style REST\nsurface where every operation is a POST against /<service>.<action> under\n/api/v2.<version>. Authenticate by calling /auth.login with API credentials\nto obtain a Bearer token, then send it in the Authorization header for all\nsubsequent calls.\n\n\nContact Support:\n Name: ClearML Documentation",
+      "type": "text/plain"
+    }
+  }
+}

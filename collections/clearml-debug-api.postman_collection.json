@@ -1,0 +1,106 @@
+{
+  "item": [
+    {
+      "id": "19991dd4-a0af-49fe-a44b-9916d80b4933",
+      "name": "Debug",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1d91601f-694e-4727-9913-9c3f9d2c6026",
+          "name": "Health check",
+          "request": {
+            "name": "Health check",
+            "description": {},
+            "url": {
+              "path": [
+                "debug.ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "42d1cd7f-88d4-4847-b0eb-725f67c607af",
+              "name": "pong",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "debug.ping"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.clear.ml",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cae65595-49f1-4f04-9db7-05db0ec9d58e",
+    "name": "ClearML REST Auth Debug API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "ClearML MLOps platform REST API. The server exposes a JSON-RPC-style REST\nsurface where every operation is a POST against /<service>.<action> under\n/api/v2.<version>. Authenticate by calling /auth.login with API credentials\nto obtain a Bearer token, then send it in the Authorization header for all\nsubsequent calls.\n\n\nContact Support:\n Name: ClearML Documentation",
+      "type": "text/plain"
+    }
+  }
+}

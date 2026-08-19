@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClearML REST Auth Queues API",
+    "version": "2.30"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Queues",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a queue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/queues.create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a queue"
+        },
+        {
+          "info": {
+            "name": "Query queues",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/queues.get_all",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Query queues"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

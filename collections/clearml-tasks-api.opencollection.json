@@ -1,0 +1,249 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClearML REST Auth Tasks API",
+    "version": "2.30"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a task"
+        },
+        {
+          "info": {
+            "name": "Get a task by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.get_by_id",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get a task by id"
+        },
+        {
+          "info": {
+            "name": "Query tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.get_all",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Query tasks"
+        },
+        {
+          "info": {
+            "name": "Edit a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.edit",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Edit a task"
+        },
+        {
+          "info": {
+            "name": "Clone a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.clone",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Clone a task"
+        },
+        {
+          "info": {
+            "name": "Delete a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete a task"
+        },
+        {
+          "info": {
+            "name": "Enqueue a task for execution",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.enqueue",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enqueue a task for execution"
+        },
+        {
+          "info": {
+            "name": "Dequeue a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.dequeue",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Dequeue a task"
+        },
+        {
+          "info": {
+            "name": "Mark a task as started (in_progress)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.started",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark a task as started (in_progress)"
+        },
+        {
+          "info": {
+            "name": "Signal a task has stopped",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.stopped",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Signal a task has stopped"
+        },
+        {
+          "info": {
+            "name": "Mark a task as completed",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.completed",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark a task as completed"
+        },
+        {
+          "info": {
+            "name": "Mark a task as failed",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.failed",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark a task as failed"
+        },
+        {
+          "info": {
+            "name": "Reset a task to its initial state",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.reset",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Reset a task to its initial state"
+        },
+        {
+          "info": {
+            "name": "Publish a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.publish",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publish a task"
+        },
+        {
+          "info": {
+            "name": "Add or update artifacts on a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/tasks.add_or_update_artifacts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add or update artifacts on a task"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

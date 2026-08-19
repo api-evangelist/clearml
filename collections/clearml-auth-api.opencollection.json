@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClearML REST Auth API",
+    "version": "2.30"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Login and obtain a bearer token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/auth.login",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Authenticate using ClearML access_key / secret_key (HTTP Basic) and\nreceive a short-lived bearer token used for subsequent calls.\n"
+        },
+        {
+          "info": {
+            "name": "Logout (invalidate token)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/auth.logout"
+          },
+          "docs": "Logout (invalidate token)"
+        },
+        {
+          "info": {
+            "name": "Create API credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/auth.create_credentials"
+          },
+          "docs": "Create API credentials"
+        },
+        {
+          "info": {
+            "name": "List API credentials for the current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/auth.get_credentials"
+          },
+          "docs": "List API credentials for the current user"
+        },
+        {
+          "info": {
+            "name": "Revoke API credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.clear.ml/auth.revoke_credentials",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Revoke API credentials"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
