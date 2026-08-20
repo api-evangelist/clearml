@@ -23,6 +23,12 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/clearml.pn
 tags:
   - ML
   - MLOps
+  - Open-Source
+  - Experiment Tracking
+  - Orchestration
+tags_raw:
+  - ML
+  - MLOps
   - Open Source
   - Experiment Tracking
   - Orchestration
@@ -35,6 +41,12 @@ apis:
   humanURL: https://clear.ml/docs/latest/docs/references/api/index/
   baseURL: https://api.clear.ml
   tags:
+  - REST
+  - Experiments
+  - Task
+  - Models
+  - Pipelines
+  tags_raw:
   - REST
   - Experiments
   - Tasks
@@ -58,6 +70,8 @@ apis:
   humanURL: https://clear.ml/docs/latest/docs/references/api/index/
   baseURL: https://api.clear.ml
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -78,6 +92,8 @@ apis:
   humanURL: https://clear.ml/docs/latest/docs/references/api/index/
   baseURL: https://api.clear.ml
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -98,6 +114,8 @@ apis:
   humanURL: https://clear.ml/docs/latest/docs/references/api/index/
   baseURL: https://api.clear.ml
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -118,6 +136,8 @@ apis:
   humanURL: https://clear.ml/docs/latest/docs/references/api/index/
   baseURL: https://api.clear.ml
   tags:
+  - Task
+  tags_raw:
   - Tasks
   properties:
   - type: OpenAPI
