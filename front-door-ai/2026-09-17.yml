@@ -1,0 +1,33 @@
+# Front Door AI Index — clearml — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: clearml
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: clear.ml
+  final_host: clear.ml
+  ownership: own
+  owner: clearml
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 75
+  host_score: 75
+  density: 62.09
+  words: 1208
+  tiers:
+    agentic: 3
+    core: 72
+    model: 0
+  ambiguous: 5
+  top_terms:
+    AI: 46
+    gen ai: 15
+    ML: 8
+    automation: 4
+    LLMs: 3
+    RAG: 1
+    fine-tune: 1
+    intelligence: 1
+    vector database: 1

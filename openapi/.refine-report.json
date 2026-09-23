@@ -1,14 +1,7 @@
 {
   "provider": "clearml",
   "sources": [
-    "clearml-auth-api-openapi.yml",
-    "clearml-debug-api-openapi.yml",
-    "clearml-events-api-openapi.yml",
-    "clearml-models-api-openapi.yml",
-    "clearml-projects-api-openapi.yml",
-    "clearml-queues-api-openapi.yml",
-    "clearml-tasks-api-openapi.yml",
-    "clearml-workers-api-openapi.yml"
+    "_original/clearml-openapi.yml"
   ],
   "outputs": [
     "clearml-auth-api-openapi.yml",
@@ -23,6 +16,27 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "clearml-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "clearml-openapi.yml: declared missing tag: Auth",
+    "clearml-openapi.yml: declared missing tag: Debug",
+    "clearml-openapi.yml: declared missing tag: Events",
+    "clearml-openapi.yml: declared missing tag: Models",
+    "clearml-openapi.yml: declared missing tag: Projects",
+    "clearml-openapi.yml: declared missing tag: Queues",
+    "clearml-openapi.yml: declared missing tag: Tasks",
+    "clearml-openapi.yml: declared missing tag: Workers",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "clearml-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "clearml-debug-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "clearml-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "clearml-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "clearml-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "clearml-queues-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "clearml-tasks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "clearml-workers-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
