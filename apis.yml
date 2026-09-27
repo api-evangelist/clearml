@@ -8,6 +8,10 @@ description: >-
   across services (auth, projects, tasks, workers, models, queues, events, pipelines).
 deliveryModel:
   model: unknown
+  license_evidence:
+    repo: clearml/clearml-server
+    spdx: NOASSERTION
+    stars: 468
   open_source: unknown
   commercial: true
   callable_host: true
@@ -17,7 +21,7 @@ deliveryModel:
   - openapi
   - pricing
   - repository-unlicensed
-  generated: '2026-08-28'
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: unknown
@@ -35,9 +39,9 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/clearml.png
 tags:
-  - Machine-Learning
+  - Machine Learning
   - MLOps
-  - Open-Source
+  - Open Source
   - Experiment Tracking
   - Orchestration
 tags_raw:
@@ -46,6 +50,8 @@ tags_raw:
   - Open Source
   - Experiment Tracking
   - Orchestration
+  - Machine-Learning
+  - Open-Source
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.23'
