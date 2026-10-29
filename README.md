@@ -1,4 +1,4 @@
-# ClearML (clearml)
+# ClearML
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,59 +66,131 @@
 
 ClearML is an open-source MLOps platform with experiment tracking, datasets, model serving, and orchestration. The ClearML Server exposes a versioned REST API split across services (auth, projects, tasks, workers, models, queues, events, pipelines).
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/clearml/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/clearml/refs/heads/main/apis.yml)
+**Areas:** Machine Learning · MLOps · Open Source · Experiment Tracking · Orchestration
 
-## Tags
+## ClearML on APIs.io
 
-- ML
-- MLOps
-- Open Source
-- Experiment Tracking
-- Orchestration
+Everything profiled for ClearML is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/clearml/](https://apis.io/providers/clearml/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (9)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-08
+- [ClearML REST API](https://apis.io/apis/clearml/clearml-rest-api/) — The ClearML REST API is organized into services: auth (login/credentials), projects, tasks (experiments), workers, models, queues, events, pipelines, and…
+- [ClearML Auth API](https://apis.io/apis/clearml/clearml-auth-api/) — The Auth API from ClearML — 5 operation(s) for auth.
+- [ClearML Debug API](https://apis.io/apis/clearml/clearml-debug-api/) — The Debug API from ClearML — 1 operation(s) for debug.
+- [ClearML Events API](https://apis.io/apis/clearml/clearml-events-api/) — The Events API from ClearML — 4 operation(s) for events.
+- [ClearML Models API](https://apis.io/apis/clearml/clearml-models-api/) — The Models API from ClearML — 4 operation(s) for models.
+- [ClearML Projects API](https://apis.io/apis/clearml/clearml-projects-api/) — The Projects API from ClearML — 2 operation(s) for projects.
+- [ClearML Queues API](https://apis.io/apis/clearml/clearml-queues-api/) — The Queues API from ClearML — 2 operation(s) for queues.
+- [ClearML Tasks API](https://apis.io/apis/clearml/clearml-tasks-api/) — The Tasks API from ClearML — 15 operation(s) for tasks.
+- [ClearML Workers API](https://apis.io/apis/clearml/clearml-workers-api/) — The Workers API from ClearML — 1 operation(s) for workers.
 
-## APIs
+### Published properties
 
-### ClearML REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The ClearML REST API is organized into services: auth (login/credentials), projects, tasks (experiments), workers, models, queues, events, pipelines, and reports. Authentication uses access/secret-key pairs minted in the UI; SDK clients handle token exchange against the auth.login endpoint.
+#### Agentic access (1)
 
-- **Human URL:** [https://clear.ml/docs/latest/docs/references/api/index/](https://clear.ml/docs/latest/docs/references/api/index/)
-- **Base URL:** `https://api.clear.ml`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Clearml Agentic Access](https://apis.io/agentic-access/clearml/clearml-agentic-access/)
 
-- REST
-- Experiments
-- Tasks
-- Models
-- Pipelines
+#### Collections (9)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://clear.ml/docs/latest/docs/references/api/index/)
-- [Authentication](https://clear.ml/docs/latest/docs/references/api/login)
-- [SDK](https://clear.ml/docs/latest/docs/clearml_sdk/clearml_sdk)
-- [Postman Collection](collections/clearml.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/clearml.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [ClearML REST API](https://apis.io/collections/clearml/open-clearml/)
+- [ClearML REST Auth API](https://apis.io/collections/clearml/open-clearml-auth-api/)
+- [ClearML REST Auth Debug API](https://apis.io/collections/clearml/open-clearml-debug-api/)
+- [ClearML REST Auth Events API](https://apis.io/collections/clearml/open-clearml-events-api/)
+- [ClearML REST Auth Models API](https://apis.io/collections/clearml/open-clearml-models-api/)
+- [ClearML REST Auth Projects API](https://apis.io/collections/clearml/open-clearml-projects-api/)
+- [ClearML REST Auth Queues API](https://apis.io/collections/clearml/open-clearml-queues-api/)
+- [ClearML REST Auth Tasks API](https://apis.io/collections/clearml/open-clearml-tasks-api/)
+- [ClearML REST Auth Workers API](https://apis.io/collections/clearml/open-clearml-workers-api/)
 
-## Common Properties
+#### Security (3)
 
-- [LinkedIn](https://www.linkedin.com/company/clearml)
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Clearml Authentication](https://apis.io/security/clearml/clearml-authentication/)
+- [Clearml Domain Security](https://apis.io/security/clearml/clearml-domain-security/)
+- [Clearml Vulnerability Disclosure](https://apis.io/security/clearml/clearml-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Clearml Plans Pricing](https://apis.io/plans/clearml/clearml-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Clearml Rate Limits](https://apis.io/rate-limits/clearml/clearml-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Clearml Finops](https://apis.io/finops/clearml/clearml-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://clear.ml/)
-- [Portal](https://clear.ml/docs/latest/docs/)
-- [Source Code](https://github.com/clearml/clearml-server)
 - [Pricing](https://clear.ml/pricing)
-- [Plans](plans/clearml-plans-pricing.yml)
-- [Rate Limits](rate-limits/clearml-rate-limits.yml)
-- [Fin Ops](finops/clearml-finops.yml)
-- [L L Ms Txt](https://clear.ml/llms.txt)
+- [Blog](https://clear.ml/feed/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 33.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 45.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 31.0 |
+| Access clarity | 15.8 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/clearml/](https://apis.io/providers/clearml/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for ClearML: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/clearml/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
